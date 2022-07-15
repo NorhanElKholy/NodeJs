@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Simple House Restaurant</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+  <link href="css/templatemo-style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="container">
+    <ul class="customul">
+      <li class="customli"><a href="/">Home</a></li>
+      <li class="customli"><a href="products">Menu</a></li>
+    </ul>
+    <main>
+      <header class="row tm-welcome-section">
+        <h2 class="col-12 text-center tm-section-title">Welcome to Simple House Restaurant</h2>
+        <p class="col-12 text-center">Enjoy the exptional taste of our diverse and unique range of foods.</p>
+      </header>
+
+      <div class="tm-paging-links">
+        <nav>
+          <ul>
+            <li class="tm-paging-item"><a href="#" class="tm-paging-link active">Pizza</a></li>
+            <li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
+            <li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Gallery -->
+      <div class="row tm-gallery">
+        <!-- gallery page 1 -->
+        <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+          
+          <%products.map((product, index)=>{
+            if(product.category == 'pizza') {
+              %>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+              <figure>
+                <img src="<%=product.image%>" alt="Image" class="img-fluid tm-gallery-img" />
+                <figcaption>
+                  <h4 class="tm-gallery-title"><%=product.name%></h4>
+                  <p class="tm-gallery-description"><%=product.description.slice(0,300)%></p>
+                  <p class="tm-gallery-price"><%=product.price%>
+                    <br>
+                  <a href="/products/<%=product._id%>" class="">Learn More</a>
+                </p>
+                </figcaption>
+              </figure>
+            </article>
+          <% }}) 
+          %>
+        </div> <!-- gallery page 1 -->
+				<!-- gallery page 2 -->
+        <div id="tm-gallery-page-salad" class="tm-gallery-page hidden">
+          <%products.map((product, index)=>{
+            if(product.category == 'salad') {
+              %>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+              <figure>
+                <img src="<%=product.image%>" alt="Image" class="img-fluid tm-gallery-img" />
+                <figcaption>
+                  <h4 class="tm-gallery-title"><%=product.name%></h4>
+                  <p class="tm-gallery-description"><%=product.description.slice(0,300)%></p>
+                  <p class="tm-gallery-price"><%=product.price%>
+                    <br>
+                  <a href="/products/<%=product._id%>" class="">Learn More</a>
+                </p>
+                </figcaption>
+              </figure>
+            </article>
+          <% }}) 
+          %>
+        </div>
+        <!-- gallery page 2 -->
+        <!-- gallery page 3 -->
+        <div id="tm-gallery-page-noodle" class="tm-gallery-page hidden">
+          <%products.map((product, index)=>{
+            if(product.category == 'pasta') {
+              %>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+              <figure>
+                <img src="<%=product.image%>" alt="Image" class="img-fluid tm-gallery-img" />
+                <figcaption>
+                  <h4 class="tm-gallery-title"><%=product.name%></h4>
+                  <p class="tm-gallery-description"><%=product.description.slice(0,300)%></p>
+                  <p class="tm-gallery-price"><%=product.price%>
+                    <br>
+                  <a href="/products/<%=product._id%>" class="">Learn More</a>
+                </p>
+                </figcaption>
+              </figure>
+            </article>
+          <% }}) 
+          %>
+        </div>
+         <!-- gallery page 3 -->
+
+      </div>
+    </main>
+
+    <footer class="tm-footer text-center">
+    </footer>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Handle click on paging links
+      $('.tm-paging-link').click(function (e) {
+        e.preventDefault();
+
+        var page = $(this).text().toLowerCase();
+        $('.tm-gallery-page').addClass('hidden');
+        $('#tm-gallery-page-' + page).removeClass('hidden');
+        $('.tm-paging-link').removeClass('active');
+        $(this).addClass("active");
+      });
+    });
+  </script>
+</body>
+
+</html>

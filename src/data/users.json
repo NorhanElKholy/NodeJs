@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "name":"admin",
+        "email":"nourhan.elkhouly@itworx.com",
+        "password":"admin",
+        "role":"admin"
+    },
+    {
+        "id":2,
+        "name":"user1",
+        "email":"nourhan.elkhouly@itworx.com",
+        "password":"user1",
+        "role":"user"
+    },
+    {
+        "id":3,
+        "name":"user2",
+        "email":"nourhan.elkhouly@itworx.com",
+        "password":"user2",
+        "role":"user"
+    }
+]

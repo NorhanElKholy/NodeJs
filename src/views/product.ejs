@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Simple House Restaurant</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+  <link href="../css/templatemo-style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="container">
+    <ul class="customul">
+      <li class="customli"><a href="/">Home</a></li>
+      <li class="customli"><a href="products">Menu</a></li>
+    </ul>
+    <main>
+        <div class="row tm-gallery">
+            <!-- gallery page 1 -->
+            <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+        <article class="tm-gallery-item">
+            <figure>
+                <h1><%=product.name%></h1>
+                <br>
+              <img src="../<%=product.image%>" alt="Image" class="img-fluid tm-gallery-img" />
+              <figcaption>
+                <p class="tm-gallery-description"><%=product.description%></p>
+                <p class="tm-gallery-price"><%=product.price%>
+              </p>
+              </figcaption>
+            </figure>
+          </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="tm-footer text-center">
+    </footer>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+</body>
+
+</html>
