@@ -9,7 +9,8 @@ const adminRouter = require('./src/routers/adminRouter');
 const homeRouter = require('./src/routers/homeRouter');
 
 const app = express();
-const port = process.env.port || 3000;
+console.log('PORT',process.env.PORT)
+const port = process.env.PORT || 8080;
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
